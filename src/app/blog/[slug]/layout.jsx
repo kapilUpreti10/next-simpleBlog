@@ -4,7 +4,8 @@ const layout = ({children}) => {
   return (
     <div>
       {children}
-      <h1>i am footer of blog page</h1>
+      {/* this will be only added for the children of blog page */}
+      {/* <h1>i am footer of blog page</h1> */}
     </div>
   )
 }
