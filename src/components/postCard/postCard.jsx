@@ -2,17 +2,18 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const PostCard = () => {
+const PostCard = ({params,searchParams,item}) => {
+  //console.log(params,searchParams);
   return (
     <>
-    <div className='max-w-[90vw] mx-auto mt-[100px] flex flex-col items-center md:flex-row md:flex-nowrap md:justify-around'>
-      <div className='rounded-lg overflow-hidden'>
-      <Image src="/home.png" alt="Post Image" width={300} height={200}  />
+    <div className='max-w-[90vw] mx-auto mt-[100px] flex flex-col items-center md:flex-row  md:justify-around md:gap-20'>
+      <div className='rounded-lg overflow-hidden md:flex-3'>
+      <Image src="/home.png" alt="Post Image" width={400} height={300} />
       </div>
-      <div className='mt-5'>
-        <h2 className='text-3xl font-semibold text-green-500'>Post Title</h2>
-        <p>Post Content</p>
-        <Link href="/blog/post" className='text-blue-500 underline'>Read More</Link>
+      <div className='mt-5 md:flex-1'>
+        <h2 className='text-3xl font-semibold text-green-500'>{item.title}</h2>
+        <p>{item.body}</p>
+        <Link href={`blog/${item.id}`} className='text-blue-500 underline'>Read More</Link>
         </div>
     </div>
         <hr className='w-full border-t border-gray-300 mt-4' />     
